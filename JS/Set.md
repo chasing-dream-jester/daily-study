@@ -57,3 +57,12 @@ mySet.forEach(element => {
   console.log(element);
 });
 ```
+
+#### size 返回 Set 中键值对的数量
+`readonly size: number`  获取元素个数
+```js
+const set=new Set()
+set.add(1)
+set.add(2)
+const size=set.size;  //2
+```
