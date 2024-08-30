@@ -14,3 +14,4 @@
     * [resolve](./Webpack/resolve.md)
     * [optimization](./Webpack/optimization.md)
     * [performace](./Webpack/performance.md)
+    * [loader](./Webpack/loader.md)

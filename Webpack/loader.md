@@ -1,5 +1,5 @@
 ## loader
-
+加载器（loader）用于转换模块的源代码。在导入模块之前，加载器可以对其进行转换和处理。loader使得 Webpack 能够处理各种类型的文件，如 JavaScript、CSS、图片、字体、HTML 等。
 ### module.rules
 #### test
 test: 一个正则表达式，用于匹配文件路径。匹配的文件会使用指定的加载器进行处理。
@@ -360,3 +360,8 @@ module.exports = (env, argv) => {
 ```
 #### html-loader
 将 HTML 导出为字符串。当编译器需要时，将压缩 HTML 字符串
+
+
+
+TODO:
+自定义loader （i18n-loader）后续补上
