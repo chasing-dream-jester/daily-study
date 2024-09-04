@@ -444,6 +444,7 @@ file.arrayBuffer().then(buffer => {
 ```
 ## 缓冲区常量
 buffer.constants.MAX_LENGTH 单个 Buffer 实例允许的最大大小 在 32 位架构上，该值当前为 230 - 1（约 1 GiB）。在 64 位架构上，此值当前为 253 - 1（约 8 PiB）
+
 buffer.constants.MAX_STRING_LENGTH 表示 string 基础类型可以拥有的最大 length，以 UTF-16 代码单元计算
 ### QA
 Q:是什么让 Buffer.allocUnsafe() 和 Buffer.allocUnsafeSlow() "不安全"？
