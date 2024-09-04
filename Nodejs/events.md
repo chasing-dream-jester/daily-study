@@ -391,7 +391,7 @@ target.removeEventListener('foo', handler, { capture: true });
 ```
 
 ### eventTarget.dispatchEvent(event)
-将 event 调度到 event.type 的句柄列表。
+将 event 调度到 event.type 的句柄列表。注册的事件监听器按照注册的顺序同步地调用
 
 返回：`boolean` 如果任一事件的 cancelable 属性值为 false 或者未调用其 preventDefault() 方法，则为 true，否则为 false。
 
