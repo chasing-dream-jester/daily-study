@@ -448,4 +448,5 @@ buffer.constants.MAX_LENGTH 单个 Buffer 实例允许的最大大小 在 32 位
 buffer.constants.MAX_STRING_LENGTH 表示 string 基础类型可以拥有的最大 length，以 UTF-16 代码单元计算
 ### QA
 Q:是什么让 Buffer.allocUnsafe() 和 Buffer.allocUnsafeSlow() "不安全"？
+
 A:调用 Buffer.allocUnsafe() 和 Buffer.allocUnsafeSlow() 时，分配的内存段未初始化（未清零）。虽然这种设计使内存分配速度非常快，但分配的内存段可能包含可能敏感的旧数据。使用由 Buffer.allocUnsafe() 创建的 Buffer 而没有完全覆盖内存可以让旧数据在读取 Buffer 内存时泄漏。虽然使用 Buffer.allocUnsafe() 有明显的性能优势，但必须格外小心以避免将安全漏洞引入应
