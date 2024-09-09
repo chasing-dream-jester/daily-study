@@ -21,6 +21,7 @@
     * [UDP/dgram](./Nodejs/dgram.md)
     * [net](./Nodejs/net.md)
     * [path](./Nodejs/path.md)
+    * [querystring](./Nodejs/querystring.md)
 * Redis
     * [redis基础](./Redis/redis基础.md)
     * [redis进阶](./Redis/redis进阶.md)
