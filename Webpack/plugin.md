@@ -66,7 +66,7 @@ if (!BROWSER_SUPPORTS_HTML5) require('html5shiv');
 
 在为 process 定义值时，'process.env.NODE_ENV': JSON.stringify('production') 会比 process: { env: { NODE_ENV: JSON.stringify('production') } } 更好，后者会覆盖 process 对象，这可能会破坏与某些模块的兼容性，因为这些模块会在 process 对象上定义其他值
 
-## EnvironmentPlugin
+### EnvironmentPlugin
 EnvironmentPlugin 是在 process.env 键上使用 DefinePlugin 的简写
 ```js
 new webpack.EnvironmentPlugin(['NODE_ENV', 'DEBUG'])
@@ -91,7 +91,7 @@ new webpack.HotModuleReplacementPlugin({
 });
 ```
 
-## MinChunkSizePlugin
+### MinChunkSizePlugin
 通过合并小于 minChunkSize 的块，将块大小保持在指定限制之上
 ```js
 new webpack.optimize.MinChunkSizePlugin({
@@ -99,7 +99,7 @@ new webpack.optimize.MinChunkSizePlugin({
 });
 ```
 
-## ProvidePlugin
+### ProvidePlugin
 用于自动加载模块，而不必在每个文件中显式地 import 或 require 这些模块。这在使用一些全局依赖时非常有用，例如 jQuery、lodash 等库。
 ```txt
 identifier：一个字符串，表示要在代码中使用的变量名。
@@ -110,7 +110,7 @@ module：一个字符串，表示要加载的模块。如果模块有默认导�
 - 性能考虑 ：虽然 ProvidePlugin 可以简化代码，但它也可能会增加打包的体积，特别是当自动加载的模块非常大时。因此，使用时需要权衡便利性和性能之间的关系。
 - 变量名称冲突 ：确保你指定的变量名称不会与代码中的其他变量名称冲突，以避免意外的行为。
 
-## [SourceMapDevToolPlugin](https://webpack.docschina.org/plugins/source-map-dev-tool-plugin/)
+### [SourceMapDevToolPlugin](https://webpack.docschina.org/plugins/source-map-dev-tool-plugin/)
 用于生成源码映射（Source Map）。源码映射是一种调试工具，可以将打包后的代码映射回源代码，从而使得在浏览器开发者工具中调试代码时，可以看到原始的源代码，而不是打包后的代码
 ```txt
 参数
@@ -142,14 +142,14 @@ new webpack.SourceMapDevToolPlugin({
 - 占位符 ：在 filename、moduleFilenameTemplate 等选项中，可以使用占位符，如 [file]、[id]、[hash] 等，以动态生成文件名。
 
 
-## SplitChunksPlugin
+### SplitChunksPlugin
 用于优化代码分割（Code Splitting）。它可以将公共代码抽取到单独的文件中，从而减少重复代码，优化加载性能。SplitChunksPlugin 在 Webpack 4 及更高版本中默认启用，并通过配置 optimization.splitChunks 选项来使用。
 
 SplitChunksPlugin 的配置选项可以在 optimization.splitChunks 中设置,详细请看[optimization](./optimization.md)
 
-## DllPlugin
+### DllPlugin
 
-## CopyWebpackPlugin
+### CopyWebpackPlugin
 用于将文件和目录从源目录复制到构建目录。它在处理静态资源（如图像、字体、HTML 文件等）时特别有用，因为这些资源通常不需要通过 Webpack 的模块系统进行处理。
 
 ```txt
@@ -206,7 +206,7 @@ plugins: [
 - **性能**：复制大量文件可能会影响构建速度，因此在使用时需要权衡性能和需求。
 - **路径**：确保 from 和 to 路径的正确性，以避免文件复制到错误的位置。
 - **文件权限**：在某些操作系统上，复制文件时可能需要处理文件权限问题
-## MiniCssExtractPlugin
+### MiniCssExtractPlugin
 用于将 CSS 从 JavaScript 文件中提取出来，生成单独的 CSS 文件。这在生产环境中非常有用，因为它可以减少 JavaScript 文件的大小，并使 CSS 能够被浏览器并行加载，从而提高网页的加载速度和性能
 ```txt
 配置选项
@@ -304,7 +304,7 @@ module.exports = {
 - 性能 ：提取 CSS 可以显著减少 JavaScript 文件的大小，并提高 CSS 的加载性能，但也会增加构建时间。因此，在使用时需要权衡性能和构建时间之间的关系。
 
 
-## CssMinimizerWebpackPlugin
+### CssMinimizerWebpackPlugin
 CssMinimizerWebpackPlugin 使用 cssnano 来优化和压缩 CSS 文件。它支持各种优化选项，如去除无用的 CSS、压缩选择器等。该插件通常与 MiniCssExtractPlugin 一起使用，以确保在提取和优化 CSS 时没有冲突
 
 ```txt
@@ -432,7 +432,7 @@ module.exports = {
 
 ```
 
-## [TerserWebpackPlugin](https://webpack.docschina.org/plugins/terser-webpack-plugin/)
+### [TerserWebpackPlugin](https://webpack.docschina.org/plugins/terser-webpack-plugin/)
 用于优化和压缩 JavaScript 文件。它基于 Terser，一个流行的 JavaScript 压缩工具。通过使用这个插件，你可以显著减少 JavaScript 文件的大小，从而提高网页的加载速度和性能
 
 webpack v5 开箱即带有最新版本的 terser-webpack-plugin。如果你使用的是 webpack v5 或更高版本，同时希望自定义配置，那么仍需要安装 terser-webpack-plugin
@@ -538,7 +538,7 @@ module.exports = {
 - 配置 ：Terser 提供了丰富的配置选项，可以根据项目需求进行细粒度的优化配置。
 
 
-## ProgressPlugin
+### ProgressPlugin
 用于显示构建过程的进度信息。它可以帮助你了解 Webpack 构建过程中的各个阶段，并实时显示进度，从而更好地监控和优化构建性能。
 ```js
 new webpack.ProgressPlugin(handler)
