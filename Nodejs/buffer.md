@@ -12,11 +12,21 @@ Buffer 是一个全局对象，用于处理二进制数据。它在处理文件I
 ## Class:Buffer
 ### 静态方法
 #### 创建 Buffer
-1. Buffer.alloc(size[, fill[, encoding]])  size ：长度； fill：填充值，默认值0；encoding：编码，默认值：'utf8'
-2. Buffer.allocUnsafe(size) size：要分配的Buffer的大小（以字节为单位）。这个方法返回一个新的Buffer，其中的内容需要被初始化，以避免敏感数据泄露。
-3. Buffer.from(array) array：一个用于创建Buffer实例的八位字节的数组。
-4. Buffer.from(buffer) buffer：一个现有的Buffer，用于拷贝数据创建新的Buffer。
-5. Buffer.from(string[, encoding])string：用于创建Buffer的字符串。encoding：（可选）字符编码，默认是utf8。
+1. Buffer.alloc(size[, fill[, encoding]])  
+   
+   size ：长度； fill：填充值，默认值0；encoding：编码，默认值：'utf8'
+2. Buffer.allocUnsafe(size) 
+   
+   size：要分配的Buffer的大小（以字节为单位）。这个方法返回一个新的Buffer，其中的内容需要被初始化，以避免敏感数据泄露。
+3. Buffer.from(array) 
+   
+   array：一个用于创建Buffer实例的八位字节的数组。
+4. Buffer.from(buffer) 
+   
+   buffer：一个现有的Buffer，用于拷贝数据创建新的Buffer。
+5. Buffer.from(string[, encoding])
+   
+   string：用于创建Buffer的字符串。encoding：（可选）字符编码，默认是utf8。
 
 #### 检测Buffer 对象
 Buffer.isBuffer(obj) 用于检测给定的对象是否是一个 Buffer 对象
@@ -92,7 +102,7 @@ Buffer.isEncoding(encoding)
    ```
 5. buf.entries() 
    
-   根据 buf 的内容创建并返回 迭代器 对 [index, byte] 对
+   根据 buf 的内容创建并返回 迭代器 对 [index, byte] 
 6. buf.equals(otherBuffer)
    
    用于比较 buf 的 Buffer 或 Uint8Array
@@ -443,9 +453,9 @@ file.arrayBuffer().then(buffer => {
 });
 ```
 ## 缓冲区常量
-buffer.constants.MAX_LENGTH 单个 Buffer 实例允许的最大大小 在 32 位架构上，该值当前为 230 - 1（约 1 GiB）。在 64 位架构上，此值当前为 253 - 1（约 8 PiB）
+`buffer.constants.MAX_LENGTH` 单个 Buffer 实例允许的最大大小 在 32 位架构上，该值当前为 230 - 1（约 1 GiB）。在 64 位架构上，此值当前为 253 - 1（约 8 PiB）
 
-buffer.constants.MAX_STRING_LENGTH 表示 string 基础类型可以拥有的最大 length，以 UTF-16 代码单元计算
+`buffer.constants.MAX_STRING_LENGTH` 表示 string 基础类型可以拥有的最大 length，以 UTF-16 代码单元计算
 ### QA
 Q:是什么让 Buffer.allocUnsafe() 和 Buffer.allocUnsafeSlow() "不安全"？
 
